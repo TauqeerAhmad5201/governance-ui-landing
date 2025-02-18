@@ -112,3 +112,62 @@ You can easily add expansion such as React Hook Form + Components, Storybook, an
 https://user-images.githubusercontent.com/55318172/146631994-e1cac137-1664-4cfe-950b-a96decc1eaa6.mp4
 
 Check out the [expansion pack repository](https://github.com/theodorusclarence/expansion-pack) for the commands
+
+## Docker Setup 🐳
+
+### Prerequisites
+- Docker installed on your machine
+- Docker Compose installed on your machine
+
+### Using Docker Compose (Recommended)
+
+1. Build and start the containers:
+```bash
+docker-compose up --build
+```
+
+2. For subsequent runs, you can simply use:
+```bash
+docker-compose up
+```
+
+3. To stop the containers:
+```bash
+docker-compose down
+```
+
+### Using Docker Directly
+
+1. Build the Docker image:
+```bash
+docker build -t governance-ui .
+```
+
+2. Run the container:
+```bash
+docker run -p 3000:3000 governance-ui
+```
+
+### Development with Docker
+
+- The application will be available at `http://localhost:3000`
+
+### Troubleshooting
+
+If you encounter any issues:
+
+1. Clean Docker cache:
+```bash
+docker system prune -a
+```
+
+2. Rebuild the containers:
+```bash
+docker-compose down
+docker-compose up --build
+```
+
+3. Check container logs:
+```bash
+docker-compose logs governance-ui
+```
