@@ -1,0 +1,10 @@
+services:
+  solana-governance-ui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sol-governance-ui
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
